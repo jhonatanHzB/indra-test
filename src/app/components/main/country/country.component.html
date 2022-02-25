@@ -1,0 +1,20 @@
+<section>
+  <div class="section container animated fadeIn">
+    <div class="country__container grid">
+      <div class="country__data">
+        <h2 class="section-title country__initial">{{ informationCountry.name?.common }}</h2>
+        <span class="section-subtitle country__initial">Capital: <span>{{ informationCountry.capitalSingle }}</span></span>
+        <p class="country__description">Extension Moneda: <span>{{ moneda }}</span></p>
+        <a [routerLink]="['/countries']" [queryParams]="{currency: divisa}" class="button">Encontrar países con esta divisa</a>
+        <p class="country__description">Idiomas hablados en el país:
+          <a [routerLink]="['/countries']" [queryParams]="{lang: lang.toLowerCase()}" class="country__link" *ngFor="let lang of languages">{{ lang }}, </a>
+        </p>
+        <p class="country__description">Población: <span>{{ informationCountry.population | number }}</span></p>
+      </div>
+
+      <img [src]="informationCountry.flag" alt="" class="country__img">
+    </div>
+  </div>
+  <div class="section container animated fadeIn resume" [innerHTML]="resume">
+  </div>
+</section>

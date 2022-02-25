@@ -1,0 +1,39 @@
+.container {
+  max-width: 960px;
+  width: calc(100% - 2rem);
+  margin-left: var(--m-2);
+  margin-right: var(--m-2);
+  padding: 0 1rem;
+
+  @include breakpoint(large) {
+    padding: 0
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+
+  &-title, &-subtitle {
+      text-align: left;
+  }
+
+  &-title {
+      font-size: var(--h1-font-size);
+      color: var(--title-color);
+      margin-bottom: var(--m-3);
+  }
+  &-subtitle {
+      display: block;
+      color: var(--first-color);
+      font-weight: var(--font-medium);
+      margin-bottom: var(--m-1)
+  }
+  @include breakpoint(large) {
+    margin: auto;
+  }
+}

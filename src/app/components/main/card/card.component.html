@@ -1,0 +1,16 @@
+<div class="card__country animated fadeIn">
+  <a [routerLink]="['/countries', country.name.common.toLowerCase()]">
+    <img
+      [src]="country.flag"
+      class="placeholder"
+      alt="{{country.name.common}}"
+      loading="eager"
+    />
+    <div class="card__container">
+      <h4 class="section-title"><b>{{country.name.common}}</b></h4>
+      <p>Población: <span>{{country.population}}</span></p>
+      <p>Region: <span>{{country.region}}</span></p>
+      <p>Capital: <span>{{country.capital}}</span></p>
+    </div>
+  </a>
+</div>

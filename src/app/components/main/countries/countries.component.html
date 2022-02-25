@@ -1,0 +1,47 @@
+<section>
+  <div class="container grid countries__container">
+
+    <div class="filters__container">
+      <div class="search__input search__input__large">
+        <em class="bx bx-search"></em>
+        <input
+          type="text"
+          placeholder="Search..."
+          #search
+          (keyup)="searchCountry(search.value)"
+        />
+      </div>
+      <div class="select__input">
+        <select
+          name="filter__country"
+          class="select__filter"
+          #region
+          (change)="searchByRegion(region.value)"
+          [disabled]="allCountries.length <= 0"
+        >
+          <option value="" selected disabled>Select option...</option>
+          <option value="all">Todos</option>
+          <option value="africa">Africa</option>
+          <option value="america">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="loader" *ngIf="allCountries.length <= 0 && !notFoundResults"></div>
+
+    <div class="container__not_found" *ngIf="notFoundResults">
+      <h2>No se encontraron resultados</h2>
+    </div>
+
+    <div class="countries__list">
+      <app-card
+        *ngFor="let country of allCountries; index as i"
+        [country]="country"
+      ></app-card>
+    </div>
+
+  </div>
+</section>

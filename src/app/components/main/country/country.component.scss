@@ -1,0 +1,37 @@
+@import "../../../../assets/utils/breakpoints.scss";
+
+.container {
+  background-color: var(--body-color);
+  padding: 0 2em;
+  &.resume {
+    padding-bottom: 5em;
+  }
+}
+
+.country {
+  &__container {
+    align-content: flex-start;
+    padding-top: var(--m-5);
+    padding-bottom: var(--m-5);
+    .button {
+      margin: 2em 0;
+      cursor: pointer;
+    }
+  }
+  &__link {
+    color: var(--first-color-alt);
+    text-decoration: underline;
+  }
+}
+
+@include breakpoint(medium) {
+  .country {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      .country__img {
+        justify-self: flex-end;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<header class="header" #header>
+  <nav class="nav container">
+      <a [routerLink]="['/home']" class="nav__logo">Indra Minsait</a>
+
+      <div class="nav__menu" #navMenu>
+          <ul class="nav__list">
+              <li class="nav__item"><a [routerLink]="['/home']" [routerLinkActive]="['active-link']" class="nav__link">Home</a></li>
+              <li class="nav__item"><a [routerLink]="['/countries']" [routerLinkActive]="['active-link']" class="nav__link">Countries</a></li>
+
+              <li><em class="bx bx-moon change-theme" #iconTheme (click)="changeTheme()"></em></li>
+          </ul>
+      </div>
+
+      <div class="nav__toggle" (click)="showMenu()">
+          <em class="bx bx-menu"></em>
+      </div>
+  </nav>
+</header>

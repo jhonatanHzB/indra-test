@@ -1,0 +1,32 @@
+@import "../../../../assets/utils/breakpoints.scss";
+
+.home {
+  &__container{
+      height: calc(100vh - var(--header-height));
+      align-content: center;
+      justify-content: center;
+      text-align: center;
+  }
+  &__title{
+      font-size: var(--biggest-font-size  );
+      color: var(--first-color);
+      margin-bottom: var(--m-1);
+  }
+  &__subtitle{
+      font-size: var(--h1-font-size);
+      color: var(--title-color);
+      margin-bottom: var(--m-4);
+  }
+}
+
+.button {
+  justify-self: center;
+}
+
+@include breakpoint(medium) {
+  .home {
+    &__container {
+      margin: auto;
+    }
+  }
+}
